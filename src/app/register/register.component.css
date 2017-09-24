@@ -1,0 +1,25 @@
+.signup-form{
+  margin: 60px auto;
+  width: 500px;
+  text-align: center;
+  min-height: 500px;
+}
+form{
+  width: 250px;
+  padding: 60px;
+  border-radius: 20px;
+  float: left;
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+md-form-field {
+  width: 100%;
+  float: left;
+}
+.login-btn{
+  float: left;
+  margin-top: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

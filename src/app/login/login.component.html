@@ -1,0 +1,19 @@
+<div class="login-page">
+    <form class="form" [formGroup]="fg" (ngSubmit)="login(fg.value)">
+      <md-form-field>
+        <input mdInput formControlName="USERNAME" type="text" placeholder="Name"/>
+        <md-error *ngIf="USERNAME.hasError('required')">
+        Username is <strong>required</strong>
+      	</md-error>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput formControlName="PASSWORD" type="password" placeholder="Password"/>
+        <md-error *ngIf="PASSWORD.hasError('required')">
+        Password is <strong>required</strong>
+      	</md-error>
+      </md-form-field>
+        <button md-raised-button color="primary" [disabled]="!fg.valid">login</button>
+        <div *ngIf="userOrPassWrong!=false" class="wrong"><p>username or password wrong</p></div>
+    </form>
+  <a routerLink="/signup" md-raised-button color="primary" class="signup-btn">Sign Up</a>
+</div>

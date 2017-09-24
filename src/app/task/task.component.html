@@ -1,0 +1,37 @@
+<!-- <a href="#" (click)="openDialog()"><md-icon class="md-48" aria-hidden="true">add_circle</md-icon></a>ADD TASK -->
+<md-toolbar color="primary">
+		<md-toolbar-row>
+			<md-form-field color="accent">
+				<input color="warn" #dateInput (dateChange)="onChange($event)" mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+				<md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+				<md-datepicker #picker></md-datepicker>
+			</md-form-field>
+		</md-toolbar-row>
+</md-toolbar>
+<div class="addTask">
+	<form [formGroup]="fg" (ngSubmit)="add(fg.value, dateInput.value)">
+		<md-form-field>
+			<input mdInput formControlName="TITLE" type="text" name="task" placeholder="Title">
+			<md-error *ngIf="TITLE.hasError('required')">
+      Title is <strong>required</strong>
+    	</md-error>
+		</md-form-field>
+		<md-form-field>
+			<textarea autosize mdInput formControlName="BODY" type="text" name="body"placeholder="Details" rows="1"></textarea>
+			<md-error *ngIf="BODY.hasError('required')">
+      Body is <strong>required</strong>
+    	</md-error>
+		</md-form-field>
+		<p><button md-raised-button type="submit" [disabled]="!fg.valid">Add</button></p>
+	</form>
+</div>
+
+<ul>
+	<li *ngFor="let task of tasksArr; let i = index">
+		<div class="task">
+			<h2>{{ task.TITLE }}</h2>
+			<h5>{{task.BODY}}</h5>
+		</div>
+			<md-slide-toggle color="primary" [checked]="task.DONE" (change)="change()" (click)="done(task.TITLE, i)">Done</md-slide-toggle>
+	</li>
+</ul>

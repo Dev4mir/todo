@@ -1,0 +1,36 @@
+<div class="signup-form">
+  <form [formGroup]="fg" (ngSubmit)="addUser(fg.value)">
+    <md-form-field>
+      <input mdInput formControlName="FIRST_NAME" type="text" placeholder="First Name"/>
+      <md-error *ngIf="!fg.controls['FIRST_NAME'].valid">
+        First Name is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <md-form-field>
+      <input mdInput formControlName="LAST_NAME" type="text" placeholder="Last Name"/>
+      <md-error *ngIf="!fg.controls['LAST_NAME'].valid">
+        Last Name is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <md-form-field>
+      <input mdInput formControlName="EMAIL" type="text" placeholder="Email"/>
+      <md-error *ngIf="!fg.controls['EMAIL'].valid">
+        Email is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <md-form-field>
+      <input mdInput formControlName="USERNAME" type="text" placeholder="Usernme"/>
+      <md-error *ngIf="!fg.controls['USERNAME'].valid">
+        Username is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <md-form-field>
+      <input mdInput formControlName="PASSWORD" type="text" placeholder="Password"/>
+      <md-error *ngIf="!fg.controls['PASSWORD'].valid">
+        Password is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+    <button md-raised-button color="primary" [disabled]="!fg.valid">Sign up</button>
+  </form>
+  <a routerLink="/login" md-raised-button color="primary" class="login-btn">Log In</a>
+</div>

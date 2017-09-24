@@ -1,0 +1,51 @@
+md-toolbar md-form-field{
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addTask{
+  margin: 50px auto;
+  width: 300px;
+}
+.addTask md-form-field{
+  width: 100%;
+}
+
+.addTask textarea{
+  resize: none;
+
+}
+
+button{
+  width: 100%;
+}
+.task{
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+ul{
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+}
+li{
+  padding: 10px;
+  margin: 0 auto;
+  width: 40%;
+  float: left;
+  background-color: #C9C7C7;
+  min-height: 150px;
+}
+li h5{
+  white-space: pre-wrap;
+}
+md-slide-toggle{
+  margin-right: 40px;
+  float: right;
+}
+/*.material-icons.md-48 { font-size: 48px; }*/
